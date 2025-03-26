@@ -1,18 +1,5 @@
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        
-        pre {
-            font-size: 18px;
-            line-height: 1.2;
-            display: inline-block;
-            text-align: left;
-        }
-    </style>
-</head>
+<html >
+
 <body>
 
     
@@ -20,35 +7,31 @@
 
     <script>
         function tree(n) {
-            let output = "";
-            output += printTreeTop(n);
-            output += printTreeBottom(n);
-            document.getElementById("treeOutput").textContent = output;
-        }
+          printTreeTop(n);
+         printTreeBottom(n);
+}
 
-        function printTreeTop(n) {
-            let result = "";
-            for (let i = 0; i < n; i++) {
-                result += repeatchar(n - i - 1, ' ') + repeatchar(2 * i + 1, '*') + "\n";
-            }
-            return result;
-        }
+function printTreeTop(n) {
+    for (let i = 0; i < n; i++) {
+        console.log(repeatchar(n - i - 1, ' ') + repeatchar(2 * i + 1, '*'));
+    }
+}
 
-        function printTreeBottom(n) {
-            let result = "";
-            for (let i = 0; i <= Math.ceil(n / 3); i++) {
-                result += repeatchar(n - 1, ' ') + "*\n";
-            }
-            return result;
-        }
+function printTreeBottom(n) {
+    for (let i = 0; i <= Math.ceil(n / 3); i++) {
+        console.log(repeatchar(n - 1, ' ') + '*');
+    }
+}
 
-        function repeatchar(n, arg_char) {
-            return arg_char.repeat(n);
-        }
+function repeatchar(n, arg_char) {
+    return arg_char.repeat(n);
+}
 
-        // 產生樹（這裡 n = 4，可以改成別的值）
-        tree(4);
+// 呼叫函式來測試，這裡設 n = 5
+tree(4);
     </script>
 
 </body>
 </html>
+
+
